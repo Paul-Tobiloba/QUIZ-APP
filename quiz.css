@@ -1,0 +1,108 @@
+.choice-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.2rem solid rgb(86, 165, 235, 0.25);
+    background-color: black;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.8);
+    transform: translateY(-0.3rem);
+    transition: transform 150ms;
+}
+
+.choice-prefix {
+    padding: 1.5rem 2.5rem;
+    background-color: rgb(0, 255, 255, 0.9);
+    color: antiquewhite;
+    border-top-left-radius: 1.5rem;
+}
+
+.choice-text {
+    padding: 1.5rem;
+    color: #143d59;
+    width: 100%;
+}
+
+.correct {
+    background-color: #28a745;
+}
+
+.incorrect {
+    background-color: #dc3545;
+}
+
+/* DISPLAY */
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.hud-main-text {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+/*NEXT BUTTON*/
+.nxt-btn {
+    font-size: 1.8rem;
+    padding: 1.5rem 0;
+    text-align: center;
+    justify-content: center;
+    border: 0.1rem solid cyan;
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    background-color: rgba(0, 255, 255, 0.6);
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    display: flex;
+}
+
+.nxt-btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(0, 255, 255, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.nxt-btn[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* FORMS */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 20rem;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+}
+
+input::placeholder {
+    color: #aaa;
+}
