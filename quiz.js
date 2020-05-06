@@ -59,21 +59,16 @@ const MAX_QUESTIONS = 5;
 startGame = () => {
     questionCounter = 0;
     score = 0;
-    availableQuesions = [...questions];
+    availableQuestions = [...questions];
     getNewQuestion();
 };
 
 getNewQuestion = () => {
-    if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        localStorage.setItem("mostRecentScore", score);
-        //go to the end page
-        return window.location.assign("/end.html");
-    }
     questionCounter++;
     questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
 
-    const questionIndex = Math.floor(Math.random() * availableQuesions.length);
-    currentQuestion = availableQuesions[questionIndex];
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
 
     choices.forEach(choice => {
@@ -81,8 +76,16 @@ getNewQuestion = () => {
         choice.innerText = currentQuestion["choice" + number];
     });
 
-    availableQuesions.splice(questionIndex, 1);
+    availableQuestions.splice(questionIndex, 1);
     acceptingAnswers = true;
+
+    if (currentQuestion == availableQuestions - 1 || availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        //go to the end page
+        nextButton.innerText = "Finish";
+        nextButton.onclick = () => {
+            return window.location.assign("./end.html");
+        };
+    }
 };
 
 choices.forEach(choice => {
@@ -93,10 +96,15 @@ choices.forEach(choice => {
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
 
+        if (!selectedChoice) {
+            alert("Please Select you answer!");
+            return;
+        }
+
         const classToApply =
             selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-
-        if (classToApply === "correct") {
+        
+            if (classToApply === "correct") {
             incrementScore(CORRECT_BONUS);
         }
 
@@ -104,14 +112,17 @@ choices.forEach(choice => {
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
-            getNewQuestion();
+            
         }, 1000);
+        nextButton.onclick = () => {
+            getNewQuestion();
+        };
     });
 });
 
 incrementScore = num => {
-  score += num;
-  scoreText.innerText = score;
+    score += num;
+    scoreText.innerText = score;
 };
 
 startGame();
