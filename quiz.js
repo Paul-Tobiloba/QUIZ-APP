@@ -9,7 +9,6 @@ let acceptingAnswer = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-
 let questions = [
     {
         question: "Which HTML element defines the title of a document?",
@@ -68,6 +67,7 @@ getNewQuestion = () => {
         localStorage.setItem("mostRecentScore", score);
         //go to the end page
         nextButton.innerText = "Finish";
+        nextButton.classList.remove("disabled")
         nextButton.onclick = () => {
             return window.location.assign("./end.html");
         };
@@ -86,14 +86,15 @@ getNewQuestion = () => {
 
     availableQuestions.splice(questionIndex, 1);
     acceptingAnswers = true;
-
+    document.getElementById("nxt-btn").disabled = true;
     
 };
 
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
         if (!acceptingAnswers) return;
-
+        document.getElementById("nxt-btn").disabled = false;
+        nextButton.classList.remove("disabled")
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
@@ -106,15 +107,25 @@ choices.forEach(choice => {
         }
 
         selectedChoice.parentElement.classList.add(classToApply);
-
+        
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
             
-        }, 1000);
+        }, 2000);
         nextButton.onclick = () => {
+            // document.getElementById("nxt-btn").disabled = true;
+            // nextButton.classList.add("disabled");
             getNewQuestion();
         };
     });
+
+    validate = () => {
+        if(!classToApply.classList.contains("disabled")){
+            alert("Kindly select an option to proceed!");
+        } else {
+            getNewQuestion();
+        }
+    };
 });
 
 incrementScore = num => {
