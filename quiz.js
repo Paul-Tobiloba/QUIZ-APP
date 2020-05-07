@@ -1,6 +1,7 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const questionCounterText = document.getElementById("questionCounter");
+const quizContent = document.getElementById("quiz");
 const scoreText = document.getElementById("score");
 const nextButton = document.getElementById("nxt-btn")
 
@@ -65,6 +66,7 @@ getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem("mostRecentScore", score);
         //go to the end page
+        quizContent.classList.add("hidden");
         nextButton.innerText = "Finish";
         nextButton.classList.remove("disabled")
         nextButton.onclick = () => {
@@ -98,8 +100,7 @@ choices.forEach(choice => {
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
 
-        const classToApply =
-            selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+        const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
         if (classToApply === "correct") {
             incrementScore(CORRECT_BONUS);
@@ -110,7 +111,7 @@ choices.forEach(choice => {
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
 
-        }, 2000);
+        }, 1000);
         nextButton.onclick = () => {
             // document.getElementById("nxt-btn").disabled = true;
             // nextButton.classList.add("disabled");
