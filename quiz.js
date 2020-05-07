@@ -69,6 +69,9 @@ getNewQuestion = () => {
         //go to the end page
         return window.location.assign("./end.html");
     }
+=======
+    
+>>>>>>> Stashed changes
     questionCounter++;
     questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
 
@@ -83,6 +86,20 @@ getNewQuestion = () => {
 
     availableQuesions.splice(questionIndex, 1);
     acceptingAnswers = true;
+<<<<<<< Updated upstream
+=======
+    document.getElementById("nxt-btn").disabled = true;
+    
+    if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        localStorage.setItem("mostRecentScore", score);
+        //go to the end page
+        nextButton.innerText = "Finish";
+        nextButton.classList.remove("disabled")
+        nextButton.onclick = () => {
+            return window.location.assign("./end.html");
+        };
+    }
+>>>>>>> Stashed changes
 };
 
 choices.forEach(choice => {
@@ -104,6 +121,14 @@ choices.forEach(choice => {
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
+<<<<<<< Updated upstream
+=======
+            
+        }, 2000);
+        nextButton.onclick = () => {
+            document.getElementById("nxt-btn").disabled = true;
+            nextButton.classList.add("disabled");
+>>>>>>> Stashed changes
             getNewQuestion();
         }, 1000);
     });
