@@ -63,9 +63,9 @@
     width: 50rem;
     justify-content: center;
     border: 0.1rem solid cyan;
-    margin-top: 3rem !important;
+    margin-top: 2rem !important;
     margin: auto;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     color: white;
     background-color: rgba(0, 255, 255, 0.6);
     border-radius: 1.5rem;
@@ -94,7 +94,8 @@
 @media screen and (max-width: 992px) {
     body {
         max-height: 75vh;
-        height: 70%
+        height: 70%;
+        display: fit-content;
     }
     
     main {
@@ -110,28 +111,15 @@
 
     #question {
         text-align: start;
-    }3
-    .nxt-btn {
-        font-size: 1.8rem;
-        padding: 1.5rem;
-        text-align: center;
-        width: 45rem;
-        justify-content: center;
-        border: 0.1rem solid cyan;
-        margin-top: 3rem !important;
-        margin: auto;
-        margin-bottom: 3rem;
-        color: white;
-        background-color: rgba(0, 255, 255, 0.6);
-        border-radius: 1.5rem;
-        display: flex;
     }
+    
 }
 
 @media screen and (max-width: 600px) {
     main {
-        display: flex;
-        height: 100vh;
+        max-height: 75vh;
+        height: 70%;
+        display: fit-content;
         justify-content: center;
         text-align: center;
     }
@@ -158,4 +146,37 @@
         border-radius: 1.5rem;
         display: flex;
     }
+    .choice-container {
+        
+        width: 100%;
+        font-size: 1.8rem;
+        border-radius: 1.2rem;
+    }
+
+    .choice-prefix {
+        padding: 1.2rem 2.5rem;
+        border-top-left-radius: 1.2rem;
+        border-bottom-left-radius: 1.2rem;
+    }
+
+    .choice-text {
+        padding: 1.rem;
+        width: 100%;
+    }
+
+    #question {
+        font-size: 3rem;
+        font-weight: 500;
+    }
+    h1 {
+        
+      
+        margin-bottom: 3rem;
+    }
+
+    h1>span {
+        font-size: 1.4rem;
+        font-weight: 300;
+    }
+
 }

@@ -133,9 +133,55 @@ h3 {
 @media screen and (max-width: 600px) {
     body {
         display: flex;
+        font-size: 20px;
     }
 
     main {
         max-width: fit-content;
+    }
+
+    main {
+        /* position: absolute; */
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+    }
+
+    .container {
+        padding: 2rem;
+        margin: 0;
+        /* position: relative;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); */
+        border: 0rem solid rgb(0, 191, 255);
+        background: rgba(0, 191, 255, 0.4);
+        box-shadow: 0 0 8px 3px rgba(3, 42, 65, 0.774);
+        border-radius: 1.5rem;
+
+    }
+
+    h1 {
+        font-size: 3.4rem;
+        color: cyan;
+        margin-bottom: 3rem;
+    }
+
+    h1>span {
+        font-size: 1.4rem;
+        font-weight: 300;
+    }
+
+    h2 {
+        font-size: 3.2rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
     }
 }
