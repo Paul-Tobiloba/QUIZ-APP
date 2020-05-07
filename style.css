@@ -3,6 +3,15 @@
 :root {
     background-color: #143d59;
     font-size: 55%;
+    
+}
+
+main{
+    /* position: absolute; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
 }
 
 *{
@@ -42,16 +51,18 @@ h3 {
 /* UTILITIES */
 
 .container {
-    height: 90%;
-    justify-content: center;
-    align-items: center;
-    max-width: 75vw;
-    margin: 5% auto 5%;
     padding: 2rem;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     border: 0rem solid rgb(0, 191, 255);
     background: rgba(0, 191, 255, 0.4);
     box-shadow: 0 0 8px 3px rgba(3, 42, 65, 0.774);
     border-radius: 1.5rem;
+    
 }
 
 .container>* {
@@ -109,6 +120,22 @@ h3 {
 }
 
 
-@media all and (max-width:480px) {
-    
+@media screen and (max-width: 992px) {
+    body {
+        display: flex;
+    }
+
+    main {
+        max-width: fit-content;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        display: flex;
+    }
+
+    main {
+        max-width: fit-content;
+    }
 }

@@ -58,12 +58,14 @@
 /*NEXT BUTTON*/
 .nxt-btn {
     font-size: 1.8rem;
-    padding: 1.5rem 0;
+    padding: 1.5rem;
     text-align: center;
+    width: 50rem;
     justify-content: center;
     border: 0.1rem solid cyan;
-    margin-top: 3rem;
-    margin-bottom: 0.5rem;
+    margin-top: 3rem !important;
+    margin: auto;
+    margin-bottom: 3rem;
     color: white;
     background-color: rgba(0, 255, 255, 0.6);
     border-radius: 1.5rem;
@@ -87,4 +89,44 @@
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
+}
+
+@media screen and (max-width: 992px) {
+    .nxt-btn {
+        font-size: 1.8rem;
+        padding: 1.5rem;
+        text-align: center;
+        width: 45rem;
+        justify-content: center;
+        border: 0.1rem solid cyan;
+        margin-top: 3rem !important;
+        margin: auto;
+        margin-bottom: 3rem;
+        color: white;
+        background-color: rgba(0, 255, 255, 0.6);
+        border-radius: 1.5rem;
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        display: flex;
+        height: 100vh;
+    }
+    .nxt-btn {
+        font-size: 1.8rem;
+        padding: 1.5rem;
+        text-align: center;
+        width: 30rem;
+        justify-content: center;
+        border: 0.1rem solid cyan;
+        margin-top: 3rem !important;
+        margin: auto;
+        margin-bottom: 3rem;
+        color: white;
+        background-color: rgba(0, 255, 255, 0.6);
+        border-radius: 1.5rem;
+        display: flex;
+    }
 }
