@@ -92,6 +92,26 @@
 }
 
 @media screen and (max-width: 992px) {
+    body {
+        max-height: 75vh;
+        max-width: 90vw;
+        height: 70%
+    }
+    
+    main {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .choice-text {
+        text-align: start;
+    }
+
+    #question {
+        text-align: start;
+    }3
     .nxt-btn {
         font-size: 1.8rem;
         padding: 1.5rem;
@@ -113,6 +133,16 @@
     main {
         display: flex;
         height: 100vh;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .choice-text {
+        text-align: start;
+    }
+
+    #question {
+        text-align: start;
     }
     .nxt-btn {
         font-size: 1.8rem;
