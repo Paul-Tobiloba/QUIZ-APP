@@ -2,7 +2,7 @@
 
 :root {
     background-color: #143d59;
-    font-size: 62.5%;
+    font-size: 55%;
 }
 
 *{
@@ -42,14 +42,16 @@ h3 {
 /* UTILITIES */
 
 .container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
+    height: 90%;
     justify-content: center;
     align-items: center;
-    max-width: 80rem;
-    margin: 0 auto;
+    max-width: 75vw;
+    margin: 5% auto 5%;
     padding: 2rem;
+    border: 0rem solid rgb(0, 191, 255);
+    background: rgba(0, 191, 255, 0.4);
+    box-shadow: 0 0 8px 3px rgba(3, 42, 65, 0.774);
+    border-radius: 1.5rem;
 }
 
 .container>* {
@@ -90,8 +92,7 @@ h3 {
     color: white;
     background-color: rgba(0, 255, 255, 0.6);
     border-top-right-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
-    border-top-left-radius: 1.5rem;
+    border-radius: 1.5rem;
 }
 
 .btn:hover {
@@ -107,3 +108,7 @@ h3 {
     transform: none;
 }
 
+
+@media all and (max-width:480px) {
+    
+}
