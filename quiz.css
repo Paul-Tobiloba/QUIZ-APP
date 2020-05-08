@@ -31,10 +31,14 @@
 
 .correct {
     background-color: #28a745;
+    color: white;
+    font-weight: bolder;
 }
 
 .incorrect {
     background-color: #dc3545;
+    color: white;
+    font-weight: bolder;
 }
 
 /* DISPLAY */

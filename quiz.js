@@ -101,20 +101,18 @@ choices.forEach(choice => {
         const selectedAnswer = selectedChoice.dataset["number"];
 
         const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-
+        
         if (classToApply === "correct") {
             incrementScore(CORRECT_BONUS);
         }
 
         selectedChoice.parentElement.classList.add(classToApply);
 
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply);
-
-        }, 1000);
+       
         nextButton.onclick = () => {
             // document.getElementById("nxt-btn").disabled = true;
             // nextButton.classList.add("disabled");
+            selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
         };
     });
